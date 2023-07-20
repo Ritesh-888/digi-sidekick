@@ -1,0 +1,30 @@
+{
+  "name": "digi-sidekick",
+  "version": "1.0.0",
+  "description": "A MERN stack application to check crud operation, jwt authentication , pagination, sorting and searching functionality.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ritesh-888/digi-sidekick.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ritesh-888/digi-sidekick/issues"
+  },
+  "homepage": "https://github.com/Ritesh-888/digi-sidekick#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0",
+    "nodemon": "^3.0.1"
+  }
+}
