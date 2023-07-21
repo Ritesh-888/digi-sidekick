@@ -15,7 +15,7 @@ const errorHandler = (res, error) => {
 router.post('/register', async (req, res) => {
   try {
     const { name, email, mobile, password } = req.body;
-    console.log(name, email, mobile, password)
+    // console.log(name, email, mobile, password)
     // Check if all required fields are provided
     if (!name || !email || !mobile || !password) {
       return res.status(400).json({ error: 'All fields are required' });
@@ -33,12 +33,12 @@ router.post('/register', async (req, res) => {
     // Create a new user
     const user = new User({ name, email, mobile, password: hashedPassword });
     await user.save();
-
+    console.log(user)
     // Generate JWT token
-    const token = jwt.sign({ user: user.email }, process.env.JWT_SECRET_KEY); // Replace 'SECRET_KEY' with your own secret key
+    const token = jwt.sign({ user: user.email }); // Replace 'SECRET_KEY' with your own secret key
 
     // Return success response
-    res.json({ success: true, token, user:email, name:name });
+    res.json({ success: true, token, user });
   } catch (error) {
     errorHandler(res, error);
   }
@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ userId: user._id }, 'SECRET_KEY'); // Replace 'SECRET_KEY' with your own secret key
+    const token = jwt.sign({ userId: user._id }); // Replace 'SECRET_KEY' with your own secret key
 
     // Return success response
     res.json({ success: true, token, recruiterName: user.name, user:email });

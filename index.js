@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 
 // Import routes
 const authRoutes = require('./routes/auth');
@@ -12,7 +12,7 @@ const crudRoutes = require('./routes/crud');
 const app = express();
 
 // Middleware - Enable CORS
-// app.use(cors());
+app.use(cors());
 
 // Middleware - Parse JSON request body
 app.use(bodyParser.json());
@@ -42,7 +42,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
