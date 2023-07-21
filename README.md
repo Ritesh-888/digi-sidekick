@@ -7,6 +7,7 @@ A MERN stack application to check crud operation, jwt authentication , paginatio
 first setup username , password and database name in order to connect to mongodb
 
 #to start, follow these steps
+
 1-    cd client
 
 2-    npm start
